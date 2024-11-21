@@ -3,6 +3,7 @@
 import sys
 
 
+# implicit inheritance from Object
 class Account:
     """
     This is a docstring
@@ -24,6 +25,9 @@ class Account:
 
         # class field
         Account.numCreated += 1
+
+    def method_a(self):
+        return "This is method A from the Account class"
 
     # method
     def deposit(self, amount):
@@ -72,7 +76,7 @@ class Account:
         return f"Account:\nFirstname: {self.get_firstname()}\nLastname: {self.get_lastname()}" \
                f"\nBalance: ${self.get_balance()}\n********************"
 
-    # operator overloading
+    # operator overloading +
     def __add__(self, other):
         return self._balance + other.get_balance()
 

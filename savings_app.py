@@ -12,7 +12,7 @@ try:
     lisa_saving_account.withdraw(25)
     print(lisa_saving_account)
 
-    lisa_saving_account.withdraw(100)
+    lisa_saving_account.withdraw(99)
 #     toggle between 10 and 100
 
     # use 'isinstance' to see if an object is an instance of a base class

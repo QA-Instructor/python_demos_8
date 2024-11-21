@@ -7,6 +7,7 @@ from accounts.account import Account
 #
 lisa_account = Account(100, 'Lisa', 'Simpson')
 print(lisa_account)
+
 lisa_balance = lisa_account.get_balance()
 print(f"Lisa's balance is ${lisa_balance}")
 #
