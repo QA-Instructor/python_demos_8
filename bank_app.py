@@ -4,12 +4,12 @@ from accounts.account import Account
 
 # instantiation
 # this is when we create objects based on classes
-
+#
 lisa_account = Account(100, 'Lisa', 'Simpson')
 print(lisa_account)
 lisa_balance = lisa_account.get_balance()
 print(f"Lisa's balance is ${lisa_balance}")
-
+#
 # add some cash to Lisa's account
 # OOP notation: object.method()
 lisa_account.deposit(20)
@@ -67,6 +67,11 @@ print(f"Lisa's balance: {lisa_account.get_balance()}")
 print(f"Simpson total balance: {simpson_total}")
 
 # bart_account.deposit(1000)
+print(f"Bart's balance: {bart_account.get_balance()}")
+print(f"Lisa's balance: {lisa_account.get_balance()}")
+bart_account.deposit(150)
+print(f"Bart's balance: {bart_account.get_balance()}")
+print(f"Lisa's balance: {lisa_account.get_balance()}")
 
 if lisa_account > bart_account:
     print("Lisa has more money in the bank than Bart")
@@ -101,6 +106,7 @@ print(marge_account.get_lastname())
 print(marge_account.account_holder_name)
 
 # setters
+# property syntax
 marge_account.account_holder_name = "Margorie Simpson"
 print(marge_account.account_holder_name)
 
@@ -124,3 +130,11 @@ print(marge_account.get_bank_name())
 bart_account.set_bank_name("National Skateboard Bank")
 print(marge_account.get_bank_name())
 
+# errors
+print("#" * 40)
+print(bart_account)
+print("Attempt to deposit a negative amount")
+print("Writing to stderr")
+bart_account.deposit(-50)
+
+# print(bart_account)

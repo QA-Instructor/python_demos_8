@@ -1,6 +1,12 @@
 # this is our capsule
 # it's a collection of attributes and methods
+import sys
+
+
 class Account:
+    """
+    This is a docstring
+    """
     numCreated = 0
     __bank_name = None
 
@@ -21,7 +27,10 @@ class Account:
 
     # method
     def deposit(self, amount):
-        self._balance += amount
+        if amount >= 0:
+            self._balance += amount
+        else:
+            print("You can not deposit a negative amount", file=sys.stderr)
 
     # method
     def withdraw(self, amount):
@@ -36,9 +45,11 @@ class Account:
         return self._balance
 
 #     create a getter method to retrieve the first_name attribute
+#     READ
     def get_firstname(self):
         return self.first_name
 
+# WRITE
     def set_firstname(self, firstname):
         self.first_name = firstname
 
@@ -58,7 +69,7 @@ class Account:
 
     # overriding a built-in method
     def __str__(self):
-        return f"Account\nFirstname: {self.get_firstname()}\nLastname: {self.get_lastname()}" \
+        return f"Account:\nFirstname: {self.get_firstname()}\nLastname: {self.get_lastname()}" \
                f"\nBalance: ${self.get_balance()}\n********************"
 
     # operator overloading
